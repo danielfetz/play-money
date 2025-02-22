@@ -14,7 +14,6 @@ if (!process.env.AUTH_RESEND_EMAIL) {
 
 const useSecureCookies = process.env.NEXTAUTH_URL.startsWith('https://')
 const cookiePrefix = useSecureCookies ? '__Secure-' : ''
-const hostName = new URL(process.env.NEXTAUTH_URL).hostname
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
   adapter: PrismaAdapter(db),
@@ -36,7 +35,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         httpOnly: true,
         sameSite: 'lax',
         path: '/',
-        domain: `.${hostName}`,
+        domain: `.merlin.school`,
         secure: useSecureCookies,
       },
     },
