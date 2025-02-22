@@ -15,7 +15,7 @@ module.exports = {
         source: '/v1/:path*',
         headers: [
           { key: 'Access-Control-Allow-Credentials', value: 'true' },
-          { key: 'Access-Control-Allow-Origin', value: "*" }, // Origin needs to be explicit when using {credentials: true}
+          { key: "Access-Control-Allow-Origin", value: "https://play-money-api-gamma.vercel.app" },
           {
             key: 'Access-Control-Allow-Methods',
             value: 'GET,OPTIONS,PATCH,DELETE,POST,PUT',
