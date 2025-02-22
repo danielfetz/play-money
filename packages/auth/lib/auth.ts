@@ -33,7 +33,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       name: `${cookiePrefix}next-auth.session-token`,
       options: {
         httpOnly: true,
-        sameSite: 'lax',
+        sameSite: 'none',
         path: '/',
         domain: `.merlin.school`,
         secure: useSecureCookies,
