@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "build": "npm run db:push && dotenv -- turbo build",
+    "build": "npm run db:push && npm run db:generate && dotenv -- turbo build",
     "dev": "dotenv -- turbo dev",
     "lint": "dotenv -- turbo lint",
     "format": "dotenv -- turbo format",
