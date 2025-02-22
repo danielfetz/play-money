@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "db:generate": "prisma generate && prisma format",
-    "db:push": "prisma db push --skip-generate",
+    "db:push": "prisma db push",
     "db:reset": "prisma migrate reset --force",
     "dev": "cross-env BROWSER=none prisma studio",
     "type-check": "tsc --noEmit",
