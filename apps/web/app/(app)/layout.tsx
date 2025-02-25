@@ -1,4 +1,4 @@
-import { MenuIcon } from 'lucide-react'
+import { MenuIcon, SearchIcon } from 'lucide-react'
 import Link from 'next/link'
 import { getMyBalance } from '@play-money/api-helpers/client'
 import { NotificationDropdown } from '@play-money/notifications/components/NotificationDropdown'
@@ -30,9 +30,6 @@ function MainNav({
         <Link className="font-medium transition-colors hover:text-primary" href="/leaderboard">
           Leaderboard
         </Link>
-      )}
-      {renderItemWrap(
-        <GlobalSearchTriggerLink className="h-auto text-[length:inherit] text-foreground transition-colors hover:text-primary" />
       )}
     </nav>
   )
@@ -77,6 +74,10 @@ export default async function AppLayout({ children }: { children: React.ReactNod
           <MainNav className="hidden gap-6 md:flex" />
 
           <div className="ml-auto flex items-center space-x-2">
+            <GlobalSearchTriggerLink className="flex h-8 w-8 items-center justify-center hover:text-primary">
+              <SearchIcon className="h-5 w-5" />
+              <span className="sr-only">Search</span>
+            </GlobalSearchTriggerLink>
             <NotificationDropdown />
             <UserNav initialBalance={initialBalance} />
           </div>
