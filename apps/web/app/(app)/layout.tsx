@@ -74,7 +74,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
           <MainNav className="hidden gap-6 md:flex" />
 
           <div className="ml-auto flex items-center space-x-2">
-            <GlobalSearchTriggerLink className="flex h-8 w-8 items-center justify-center hover:text-primary">
+            <GlobalSearchTriggerLink>
               <SearchIcon className="h-5 w-5" />
               <span className="sr-only">Search</span>
             </GlobalSearchTriggerLink>
