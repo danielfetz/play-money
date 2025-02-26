@@ -108,7 +108,7 @@ export function MarketOverviewPage({
         </div>
       ) : null}
 
-      <Card className="flex-1">
+      <Card className="flex-1 border-0">
         <MarketToolbar
           market={market}
           canEdit={user ? canModifyMarket({ market, user }) : false}
