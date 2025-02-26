@@ -15,19 +15,31 @@ function MainNav({
   ...props
 }: React.HTMLAttributes<HTMLElement> & { renderItemWrap?: (children: React.ReactNode) => React.ReactNode }) {
   return (
-    <nav className={cn('flex items-center text-sm', className)} {...props}>
+    <nav className={cn('flex items-center', className)} style={{ fontSize: '15px' }} {...props}>
       {renderItemWrap(
-        <Link className="font-medium transition-colors hover:text-primary" href="/questions">
+        <Link 
+          className="font-medium transition-colors hover:text-primary" 
+          style={{ fontSize: '15px' }}
+          href="/questions"
+        >
           Questions
         </Link>
       )}
       {renderItemWrap(
-        <Link className="font-medium transition-colors hover:text-primary" href="/create-post">
+        <Link 
+          className="font-medium transition-colors hover:text-primary" 
+          style={{ fontSize: '15px' }}
+          href="/create-post"
+        >
           Create Question
         </Link>
       )}
       {renderItemWrap(
-        <Link className="font-medium transition-colors hover:text-primary" href="/leaderboard">
+        <Link 
+          className="font-medium transition-colors hover:text-primary" 
+          style={{ fontSize: '15px' }}
+          href="/leaderboard"
+        >
           Leaderboard
         </Link>
       )}
@@ -59,7 +71,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
             </SheetTrigger>
             <SheetContent className="flex flex-col" side="left">
               <div className="flex flex-1 flex-col gap-4">
-                <span className="text-lg font-bold tracking-tight text-muted-foreground">🧙‍♂️ Merlin</span>
+                <span className="text-lg font-bold tracking-tight">🧙‍♂️ Merlin</span>
                 <MainNav
                   className="flex flex-col items-start space-y-4 text-lg"
                   renderItemWrap={(child) => <SheetClose asChild>{child}</SheetClose>}
@@ -69,7 +81,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
             </SheetContent>
           </Sheet>
           <Link className="flex items-center gap-2" href="/">
-            <span className="text-lg font-bold tracking-tight text-muted-foreground">🧙‍♂️ Merlin</span>
+            <span className="text-lg font-bold tracking-tight">🧙‍♂️ Merlin</span>
           </Link>
           <MainNav className="hidden gap-6 md:flex" />
 
