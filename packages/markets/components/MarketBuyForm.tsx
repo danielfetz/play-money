@@ -171,7 +171,7 @@ export function MarketBuyForm({
           )}
         />
 
-        <Button type="submit" className="w-full truncate" loading={form.formState.isSubmitting}>
+        <Button type="submit" className="w-full truncate shadow-[inset_0px_-4px_0px_0px_rgba(0,0,0,0.1)]" loading={form.formState.isSubmitting}>
           Buy {_.truncate(selectedOption?.name, { length: 20 })}
         </Button>
 
