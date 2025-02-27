@@ -61,7 +61,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   return (
     <div className="flex min-h-screen flex-col">
       <header className="flex w-full flex-col justify-between border-b">
-        <div className="flex h-16 items-center justify-between gap-4 px-4">
+        <div className="flex h-16 items-center justify-between gap-6 px-6">
           <Sheet>
             <SheetTrigger asChild>
               <Button className="md:hidden" size="icon" variant="outline">
@@ -71,7 +71,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
             </SheetTrigger>
             <SheetContent className="flex flex-col" side="left">
               <div className="flex flex-1 flex-col gap-4">
-                <span className="text-lg font-bold tracking-tight">🧙‍♂️ Merlin</span>
+                <span className="text-xl font-bold tracking-tight">🧙‍♂️ Merlin</span>
                 <MainNav
                   className="flex flex-col items-start space-y-4 text-lg"
                   renderItemWrap={(child) => <SheetClose asChild>{child}</SheetClose>}
@@ -81,7 +81,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
             </SheetContent>
           </Sheet>
           <Link className="flex items-center gap-2" href="/">
-            <span className="text-lg font-bold tracking-tight">🧙‍♂️ Merlin</span>
+            <span className="text-2xl font-bold tracking-tight">🧙‍♂️ Merlin</span>
           </Link>
           <MainNav className="hidden gap-6 md:flex" />
 
