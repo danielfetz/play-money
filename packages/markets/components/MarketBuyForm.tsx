@@ -93,7 +93,6 @@ export function MarketBuyForm({
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-        {orderedOptions.length > 1 ? (
           <FormField
             control={form.control}
             name="optionId"
@@ -116,8 +115,6 @@ export function MarketBuyForm({
               </FormItem>
             )}
           />
-        ) : null}
-
         <FormField
           control={form.control}
           name="amount"
