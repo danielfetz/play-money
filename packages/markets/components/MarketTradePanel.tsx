@@ -66,7 +66,7 @@ export function MarketTradePanel({
           <Tabs defaultValue="buy">
             <CardHeader className="flex items-start border-b pb-0 md:p-3 md:pb-0">
               <Combobox
-                buttonClassName="w-full text-lg border-none hover:bg-muted"
+                buttonClassName="w-full text-lg border-none hover:bg-muted px-3"
                 value={activeOption?.id}
                 onChange={(value) => setSelected([value])}
                 items={market.options.map((option) => ({ value: option.id, label: option.name }))}
