@@ -64,7 +64,7 @@ export function MarketTradePanel({
       ) : isTradable ? (
         <Card className={cn(effect && 'animate-slide-in-right')} onAnimationEnd={resetEffect}>
           <Tabs defaultValue="buy">
-            <CardHeader className="flex items-start border-b border-border md:p-3">
+            <CardHeader className="flex items-start border-b md:p-3">
               <Combobox
                 buttonClassName="w-full text-lg border-none hover:bg-muted"
                 value={activeOption?.id}
