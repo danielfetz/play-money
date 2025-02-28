@@ -127,7 +127,7 @@ export function MarketBuyForm({
                     size="sm"
                     type="button"
                     variant="secondary"
-                    className="h-6 px-2 font-mono"
+                    className="h-6 px-2"
                     onClick={() => field.onChange((field.value || 0) + DAILY_TRADE_BONUS_PRIMARY)}
                   >
                     +{DAILY_TRADE_BONUS_PRIMARY}
@@ -136,7 +136,7 @@ export function MarketBuyForm({
                     size="sm"
                     type="button"
                     variant="secondary"
-                    className="h-6 px-2 font-mono"
+                    className="h-6 px-2"
                     onClick={() => field.onChange((field.value || 0) + 250)}
                   >
                     +250
@@ -145,7 +145,7 @@ export function MarketBuyForm({
                     size="sm"
                     type="button"
                     variant="secondary"
-                    className="h-6 px-2 font-mono"
+                    className="h-6 px-2"
                     onClick={() => field.onChange((field.value || 0) + 1000)}
                   >
                     +1k
