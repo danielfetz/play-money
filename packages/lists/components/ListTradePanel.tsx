@@ -54,7 +54,7 @@ export function ListTradePanel({ list, onTradeComplete }: { list: ExtendedList; 
           <Tabs defaultValue="buy">
             <CardHeader className="flex items-start border-b pb-0 md:p-3 md:pb-0">
               <Combobox
-                buttonClassName="w-full text-lg border-none hover:bg-muted"
+                buttonClassName="w-full text-lg border-none hover:bg-muted px-3"
                 value={selectedMarket?.market.id}
                 onChange={(value) => setSelected([value])}
                 items={list.markets.map((option) => ({ value: option.market.id, label: option.market.question }))}
