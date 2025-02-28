@@ -64,17 +64,26 @@ export function MarketTradePanel({
       ) : isTradable ? (
         <Card className={cn(effect && 'animate-slide-in-right')} onAnimationEnd={resetEffect}>
           <Tabs defaultValue="buy">
-            <CardHeader className="flex items-start md:p-3">
+            <CardHeader className="flex items-start border-b border-border md:p-3">
               <Combobox
                 buttonClassName="w-full text-lg border-none hover:bg-muted"
                 value={activeOption?.id}
                 onChange={(value) => setSelected([value])}
                 items={market.options.map((option) => ({ value: option.id, label: option.name }))}
               />
-              <TabsList className="ml-3 p-0">
-                <TabsTrigger value="buy">Buy</TabsTrigger>
-                <TabsTrigger value="sell">Sell</TabsTrigger>
-              </TabsList>
+              <TabsList className="ml-3 p-0 bg-transparent">
+                <TabsTrigger 
+                  className="relative data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:absolute data-[state=active]:after:bottom-[-1px] data-[state=active]:after:left-0 data-[state=active]:after:w-full data-[state=active]:after:h-[2px] data-[state=active]:after:bg-foreground" 
+                  value="buy"
+                >
+                  Buy
+                </TabsTrigger>
+                <TabsTrigger 
+                  className="relative data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:absolute data-[state=active]:after:bottom-[-1px] data-[state=active]:after:left-0 data-[state=active]:after:w-full data-[state=active]:after:h-[2px] data-[state=active]:after:bg-foreground" 
+                  value="sell"
+                >
+                  Sell
+                </TabsTrigger>
             </CardHeader>
 
             <CardContent className="mt-4">
