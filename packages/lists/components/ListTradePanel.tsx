@@ -52,16 +52,22 @@ export function ListTradePanel({ list, onTradeComplete }: { list: ExtendedList; 
       ) : isTradable ? (
         <Card className={cn(effect && 'animate-slide-in-right')} onAnimationEnd={resetEffect}>
           <Tabs defaultValue="buy">
-            <CardHeader className="flex items-start bg-muted md:p-3">
+            <CardHeader className="flex items-start border-b pb-0 md:p-3 md:pb-0">
               <Combobox
-                buttonClassName="bg-muted w-full text-lg border-none"
+                buttonClassName="w-full text-lg border-none hover:bg-muted"
                 value={selectedMarket?.market.id}
                 onChange={(value) => setSelected([value])}
                 items={list.markets.map((option) => ({ value: option.market.id, label: option.market.question }))}
               />
-              <TabsList className="ml-3 p-0">
-                <TabsTrigger value="buy">Buy</TabsTrigger>
-                <TabsTrigger value="sell">Sell</TabsTrigger>
+              <TabsList className="ml-3 p-0 bg-transparent gap-3 h-auto">
+                <TabsTrigger 
+                  className="relative pt-0 pr-0 pb-2.5 pl-0 text-base data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:absolute data-[state=active]:after:bottom-[-1px] data-[state=active]:after:left-0 data-[state=active]:after:w-full data-[state=active]:after:h-[2px] data-[state=active]:after:bg-foreground" 
+                  value="buy"
+                >Buy</TabsTrigger>
+                <TabsTrigger 
+                  className="relative pt-0 pr-0 pb-2.5 pl-0 text-base data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:absolute data-[state=active]:after:bottom-[-1px] data-[state=active]:after:left-0 data-[state=active]:after:w-full data-[state=active]:after:h-[2px] data-[state=active]:after:bg-foreground" 
+                  value="sell"
+                >Sell</TabsTrigger>
               </TabsList>
             </CardHeader>
 
