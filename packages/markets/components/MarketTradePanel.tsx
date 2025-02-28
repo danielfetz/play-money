@@ -80,6 +80,7 @@ export function MarketTradePanel({
                   className="relative data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:absolute data-[state=active]:after:bottom-[-1px] data-[state=active]:after:left-0 data-[state=active]:after:w-full data-[state=active]:after:h-[2px] data-[state=active]:after:bg-foreground" 
                   value="sell"
                 >Sell</TabsTrigger>
+              </TabsList>
             </CardHeader>
 
             <CardContent className="mt-4">
