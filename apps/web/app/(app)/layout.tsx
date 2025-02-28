@@ -1,4 +1,4 @@
-import { MenuIcon } from 'lucide-react'
+import { MenuIcon, SearchIcon } from 'lucide-react'
 import Link from 'next/link'
 import { getMyBalance } from '@play-money/api-helpers/client'
 import { NotificationDropdown } from '@play-money/notifications/components/NotificationDropdown'
@@ -15,24 +15,33 @@ function MainNav({
   ...props
 }: React.HTMLAttributes<HTMLElement> & { renderItemWrap?: (children: React.ReactNode) => React.ReactNode }) {
   return (
-    <nav className={cn('flex items-center text-sm', className)} {...props}>
+    <nav className={cn('flex items-center', className)} style={{ fontSize: '15px' }} {...props}>
       {renderItemWrap(
-        <Link className="font-medium transition-colors hover:text-primary" href="/questions">
+        <Link 
+          className="font-medium transition-colors hover:text-primary" 
+          style={{ fontSize: '15px' }}
+          href="/questions"
+        >
           Questions
         </Link>
       )}
       {renderItemWrap(
-        <Link className="font-medium transition-colors hover:text-primary" href="/create-post">
+        <Link 
+          className="font-medium transition-colors hover:text-primary" 
+          style={{ fontSize: '15px' }}
+          href="/create-post"
+        >
           Create Question
         </Link>
       )}
       {renderItemWrap(
-        <Link className="font-medium transition-colors hover:text-primary" href="/leaderboard">
+        <Link 
+          className="font-medium transition-colors hover:text-primary" 
+          style={{ fontSize: '15px' }}
+          href="/leaderboard"
+        >
           Leaderboard
         </Link>
-      )}
-      {renderItemWrap(
-        <GlobalSearchTriggerLink className="h-auto text-[length:inherit] text-foreground transition-colors hover:text-primary" />
       )}
     </nav>
   )
@@ -52,7 +61,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   return (
     <div className="flex min-h-screen flex-col">
       <header className="flex w-full flex-col justify-between border-b">
-        <div className="flex h-16 items-center justify-between gap-4 px-4">
+        <div className="flex h-16 items-center justify-between gap-6 px-6">
           <Sheet>
             <SheetTrigger asChild>
               <Button className="md:hidden" size="icon" variant="outline">
@@ -62,7 +71,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
             </SheetTrigger>
             <SheetContent className="flex flex-col" side="left">
               <div className="flex flex-1 flex-col gap-4">
-                <span className="text-lg font-bold tracking-tight text-muted-foreground">PlayMoney</span>
+                <span className="text-xl font-bold tracking-tight">🧙‍♂️ Merlin</span>
                 <MainNav
                   className="flex flex-col items-start space-y-4 text-lg"
                   renderItemWrap={(child) => <SheetClose asChild>{child}</SheetClose>}
@@ -72,11 +81,15 @@ export default async function AppLayout({ children }: { children: React.ReactNod
             </SheetContent>
           </Sheet>
           <Link className="flex items-center gap-2" href="/">
-            <span className="text-lg font-bold tracking-tight text-muted-foreground">PlayMoney</span>
+            <span className="text-2xl font-bold tracking-tight">🧙‍♂️ Merlin</span>
           </Link>
           <MainNav className="hidden gap-6 md:flex" />
 
           <div className="ml-auto flex items-center space-x-2">
+            <GlobalSearchTriggerLink>
+              <SearchIcon className="h-5 w-5" />
+              <span className="sr-only">Search</span>
+            </GlobalSearchTriggerLink>
             <NotificationDropdown />
             <UserNav initialBalance={initialBalance} />
           </div>

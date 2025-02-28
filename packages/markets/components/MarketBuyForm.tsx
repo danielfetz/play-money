@@ -93,7 +93,6 @@ export function MarketBuyForm({
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-        {orderedOptions.length > 1 ? (
           <FormField
             control={form.control}
             name="optionId"
@@ -116,8 +115,6 @@ export function MarketBuyForm({
               </FormItem>
             )}
           />
-        ) : null}
-
         <FormField
           control={form.control}
           name="amount"
@@ -130,7 +127,7 @@ export function MarketBuyForm({
                     size="sm"
                     type="button"
                     variant="secondary"
-                    className="h-6 px-2 font-mono"
+                    className="h-6 px-2"
                     onClick={() => field.onChange((field.value || 0) + DAILY_TRADE_BONUS_PRIMARY)}
                   >
                     +{DAILY_TRADE_BONUS_PRIMARY}
@@ -139,7 +136,7 @@ export function MarketBuyForm({
                     size="sm"
                     type="button"
                     variant="secondary"
-                    className="h-6 px-2 font-mono"
+                    className="h-6 px-2"
                     onClick={() => field.onChange((field.value || 0) + 250)}
                   >
                     +250
@@ -148,7 +145,7 @@ export function MarketBuyForm({
                     size="sm"
                     type="button"
                     variant="secondary"
-                    className="h-6 px-2 font-mono"
+                    className="h-6 px-2"
                     onClick={() => field.onChange((field.value || 0) + 1000)}
                   >
                     +1k
@@ -171,7 +168,7 @@ export function MarketBuyForm({
           )}
         />
 
-        <Button type="submit" className="w-full truncate" loading={form.formState.isSubmitting}>
+        <Button type="submit" className="w-full truncate shadow-[inset_0px_-4px_0px_0px_rgba(0,0,0,0.1)]" loading={form.formState.isSubmitting}>
           Buy {_.truncate(selectedOption?.name, { length: 20 })}
         </Button>
 
