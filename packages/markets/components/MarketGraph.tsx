@@ -46,7 +46,7 @@ export function MarketGraph({ market, activeOptionId }: { market: ExtendedMarket
               vertical={false} 
               stroke="hsl(var(--border))"
               strokeDasharray="4 4"
-              opacity={0.2}
+              opacity={0.5}
             />
             <ChartTooltip
               content={({ payload }) => {
