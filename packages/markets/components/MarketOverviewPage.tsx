@@ -247,7 +247,7 @@ export function MarketOverviewPage({
           ) : null}
         </CardContent>
 
-        <CardContent className="space-y-2 border-0">
+        <CardContent className="space-y-2">
           {market.description ? <ReadMoreEditor value={market.description} maxLines={6} /> : null}
 
           {market.tags.length ? (
