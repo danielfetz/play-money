@@ -47,7 +47,7 @@ export function ListPage({
   }
 
   return (
-    <Card className="flex-1">
+    <Card className="flex-1 border-0">
       <ListToolbar
         list={list}
         canEdit={user ? canModifyList({ list, user }) : false}
