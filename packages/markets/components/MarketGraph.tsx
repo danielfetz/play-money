@@ -37,10 +37,17 @@ export function MarketGraph({ market, activeOptionId }: { market: ExtendedMarket
   const activeOptionIndex = createdOrderOptions.findIndex((o) => o.id === activeOptionId)
 
   return (
-    <Card className="h-40">
+    <Card className="h-80">
       {graph?.data ? (
         <ResponsiveContainer width="100%" height="100%">
           <LineChart width={300} height={128} data={graph.data} margin={{ top: 10, right: 0, bottom: 0, left: 0 }}>
+            <CartesianGrid 
+              horizontal={true} 
+              vertical={false} 
+              stroke="hsl(var(--border))"
+              strokeDasharray="4 4"
+              opacity={0.2}
+            />
             <ChartTooltip
               content={({ payload }) => {
                 const data = payload?.[0]?.payload
