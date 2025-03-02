@@ -73,7 +73,7 @@ export function ListTradePanel({ list, onTradeComplete }: { list: ExtendedList; 
               </TabsList>
             </CardHeader>
 
-            <CardContent className="mt-4 pt-0 px-5 pb-5">
+            <CardContent className="mt-4 !pt-0 !px-5 !pb-5">
               <TabsContent className="space-y-4" value="buy">
                 {selectedMarket ? (
                   <MarketBuyForm
