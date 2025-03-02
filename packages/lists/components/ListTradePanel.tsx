@@ -106,7 +106,7 @@ export function ListTradePanel({ list, onTradeComplete }: { list: ExtendedList; 
       ) : null}
 
       {total ? (
-        <Card>
+        <Card className="mt-6">
           <CardContent className="flex flex-col gap-2 p-3 md:py-4">
             <button 
               onClick={() => setIsBalanceOpen(!isBalanceOpen)}
