@@ -107,7 +107,7 @@ export function ListTradePanel({ list, onTradeComplete }: { list: ExtendedList; 
 
       {total ? (
         <Card className="!mt-6">
-          <CardContent className="flex flex-col gap-2 !p-5 md:py-4">
+          <CardContent className="flex flex-col gap-2 !px-5 md:py-4">
             <button 
               onClick={() => setIsBalanceOpen(!isBalanceOpen)}
               className="flex w-full items-center justify-between font-semibold"
