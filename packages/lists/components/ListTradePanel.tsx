@@ -54,7 +54,7 @@ export function ListTradePanel({ list, onTradeComplete }: { list: ExtendedList; 
       ) : isTradable ? (
         <Card className={cn(effect && 'animate-slide-in-right')} onAnimationEnd={resetEffect}>
           <Tabs defaultValue="buy">
-            <CardHeader className="flex items-start border-b pb-0 md:p-3 md:pb-0">
+            <CardHeader className="flex items-start border-b p-2 pb-0">
               <Combobox
                 buttonClassName="w-full text-lg border-none hover:bg-muted px-3"
                 value={selectedMarket?.market.id}
@@ -106,8 +106,8 @@ export function ListTradePanel({ list, onTradeComplete }: { list: ExtendedList; 
       ) : null}
 
       {total ? (
-        <Card>
-          <CardContent className="flex flex-col gap-2 p-3 md:py-4">
+        <Card className="!mt-6">
+          <CardContent className="flex flex-col gap-2 p-5 md:py-4">
             <button 
               onClick={() => setIsBalanceOpen(!isBalanceOpen)}
               className="flex w-full items-center justify-between font-semibold"
