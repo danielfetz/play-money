@@ -34,7 +34,7 @@ export function ListGraph({ list, activeOptionId }: { list: ExtendedList; active
   const activeMarketIndex = list.markets.findIndex((m) => m.market.id === activeOptionId)
 
   return (
-    <Card className="h-80">
+    <Card className="h-80 border-0">
       {graph?.data ? (
         <ResponsiveContainer width="100%" height="100%">
           <LineChart width={300} height={128} data={graph.data} margin={{ top: 10, right: 0, bottom: 0, left: 0 }}>
