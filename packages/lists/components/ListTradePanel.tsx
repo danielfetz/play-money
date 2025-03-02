@@ -73,7 +73,7 @@ export function ListTradePanel({ list, onTradeComplete }: { list: ExtendedList; 
               </TabsList>
             </CardHeader>
 
-            <CardContent className="mt-4">
+            <CardContent className="mt-4 pt-0 px-5 pb-5">
               <TabsContent className="space-y-4" value="buy">
                 {selectedMarket ? (
                   <MarketBuyForm
@@ -106,7 +106,7 @@ export function ListTradePanel({ list, onTradeComplete }: { list: ExtendedList; 
       ) : null}
 
       {total ? (
-        <Card className="mt-6">
+        <Card>
           <CardContent className="flex flex-col gap-2 p-3 md:py-4">
             <button 
               onClick={() => setIsBalanceOpen(!isBalanceOpen)}
