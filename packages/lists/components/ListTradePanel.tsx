@@ -1,7 +1,7 @@
 'use client'
 
-import { CircleOffIcon } from 'lucide-react'
-import React from 'react'
+import { CircleOffIcon, ChevronDownIcon } from 'lucide-react'
+import React, { useState } from 'react'
 import { mutate } from 'swr'
 import { LIST_BALANCE_PATH, MY_BALANCE_PATH, useListBalance } from '@play-money/api-helpers/client/hooks'
 import { MarketBalanceBreakdown } from '@play-money/markets/components/MarketBalanceBreakdown'
@@ -41,6 +41,8 @@ export function ListTradePanel({ list, onTradeComplete }: { list: ExtendedList; 
     .reduce((sum, position) => sum + position.total, 0)
   const positionsSum = (balance?.userPositions ?? []).reduce((sum, position) => sum + position.value, 0)
   const total = (primaryBalanceSum || 0) + positionsSum
+
+  const [isBalanceOpen, setIsBalanceOpen] = useState(false)
 
   return (
     <div className="space-y-4">
@@ -106,16 +108,27 @@ export function ListTradePanel({ list, onTradeComplete }: { list: ExtendedList; 
       {total ? (
         <Card>
           <CardContent className="flex flex-col gap-2 p-3 md:py-4">
-            <div className="flex justify-between font-semibold">
+            <button 
+              onClick={() => setIsBalanceOpen(!isBalanceOpen)}
+              className="flex w-full items-center justify-between font-semibold"
+            >
               <span>Balance</span>
-            </div>
+              <ChevronDownIcon 
+                className={cn(
+                  "h-5 w-5 transition-transform duration-200",
+                  isBalanceOpen ? "rotate-180" : ""
+                )}
+              />
+            </button>
 
-            <MarketBalanceBreakdown
-              markets={list.markets.map((m) => m.market)}
-              balances={primaryBalances}
-              positions={balance?.userPositions ?? []}
-              options={list.markets.map((m) => m.market.options).flat()}
-            />
+            {isBalanceOpen && (
+              <MarketBalanceBreakdown
+                markets={list.markets.map((m) => m.market)}
+                balances={primaryBalances}
+                positions={balance?.userPositions ?? []}
+                options={list.markets.map((m) => m.market.options).flat()}
+              />
+            )}
           </CardContent>
         </Card>
       ) : null}
