@@ -1,7 +1,7 @@
 'use client'
 
-import { CircleOffIcon } from 'lucide-react'
-import React from 'react'
+import { CircleOffIcon, ChevronDownIcon } from 'lucide-react'
+import React, { useState } from 'react'
 import { mutate } from 'swr'
 import {
   MARKET_BALANCE_PATH,
@@ -114,15 +114,26 @@ export function MarketTradePanel({
       {total ? (
         <Card>
           <CardContent className="flex flex-col gap-2 p-3 md:py-4">
-            <div className="flex justify-between font-semibold">
+            <button 
+              onClick={() => setIsBalanceOpen(!isBalanceOpen)}
+              className="flex w-full items-center justify-between font-semibold"
+            >
               <span>Balance</span>
-            </div>
+              <ChevronDownIcon 
+                className={cn(
+                  "h-5 w-5 transition-transform duration-200",
+                  isBalanceOpen ? "rotate-180" : ""
+                )}
+              />
+            </button>
 
-            <MarketBalanceBreakdown
-              balances={primaryBalance ? [primaryBalance] : []}
-              positions={balance?.userPositions ?? []}
-              options={market.options}
-            />
+            {isBalanceOpen && (
+              <MarketBalanceBreakdown
+                balances={primaryBalance ? [primaryBalance] : []}
+                positions={balance?.userPositions ?? []}
+                options={market.options}
+              />
+            )}
           </CardContent>
         </Card>
       ) : null}
