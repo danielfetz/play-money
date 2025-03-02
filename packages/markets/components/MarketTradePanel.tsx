@@ -41,7 +41,7 @@ export function MarketTradePanel({
   const balance = balanceData?.data
   const activeOption = market.options.find((o) => o.id === selected[0])
   const activePosition = balance?.userPositions.find((p) => p.optionId === activeOption?.id)
-  const [isBalanceOpen, setIsBalanceOpen] = useState(true)
+  const [isBalanceOpen, setIsBalanceOpen] = useState(false)
 
   const handleComplete = async () => {
     void mutate(MY_BALANCE_PATH)
